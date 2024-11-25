@@ -13,7 +13,7 @@ sudo mkdir -m 0755 -p /nix/var/nix/{profiles,gcroots}/per-user/$USER
 sudo chown -R $USER:nixbld /nix/var/nix/{profiles,gcroots}/per-user/$USER
 ```
 
-- \[https://nix-community.github.io/home-manager/index.xhtml#ch-installation\](install home-manager)
+- install home-manager [here](https://nix-community.github.io/home-manager/index.xhtml#ch-installation)
 
 - activate profile
 
