@@ -47,6 +47,7 @@
     pkgs.neovim
 
     pkgs.bottom
+    pkgs.lazygit
     pkgs.tree
     pkgs.ripgrep
     pkgs.cmatrix
