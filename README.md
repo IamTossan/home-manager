@@ -15,6 +15,8 @@ sudo chown -R $USER:nixbld /nix/var/nix/{profiles,gcroots}/per-user/$USER
 
 - install home-manager [here](https://nix-community.github.io/home-manager/index.xhtml#ch-installation)
 
+- install nixgl [here](https://github.com/nix-community/nixGL)
+
 - activate profile
 
 ```bash
