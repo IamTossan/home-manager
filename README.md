@@ -22,3 +22,10 @@ sudo chown -R $USER:nixbld /nix/var/nix/{profiles,gcroots}/per-user/$USER
 ```bash
 home-manager switch --impure --flake .#tossan
 ```
+
+## Notes
+
+- update package cache
+```bash
+nix flake update
+```

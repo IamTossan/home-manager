@@ -20,7 +20,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "25.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
@@ -41,8 +41,7 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    (pkgs.nerdfonts.override { fonts = [ "Hack" ]; })
-    (config.lib.nixGL.wrap pkgs.alacritty)
+    pkgs.nerd-fonts.hack
     pkgs.tmux
     pkgs.neovim
 
@@ -116,6 +115,25 @@
     };
     package = config.lib.nixGL.wrap pkgs.alacritty;
   };
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      theme = "catppuccin-mocha";
+      background-opacity = 0.8;
+      term = "xterm-256color";
+      window-decoration = "none";
+      font-size = 10;
+      gtk-tabs-location = "hidden";
+      window-padding-x = 5;
+      window-padding-y = 5;
+
+      keybind = [
+        "ctrl+a>a=toggle_window_decorations"
+        "ctrl+a>tab=toggle_tab_overview"
+      ];
+    };
+    package = config.lib.nixGL.wrap pkgs.ghostty;
+  };
 
   programs.tmux = {
     enable = true; 
@@ -173,7 +191,7 @@
       data = "/usr/bin/sudo /usr/bin/chmod -R 777 $HOME/.nix-profile/share/applications && /usr/bin/update-desktop-database $HOME/.nix-profile/share/applications";
     };
     setDefaultTerminal = ''
-      /usr/bin/gsettings set org.gnome.desktop.default-applications.terminal exec 'alacritty'
+      /usr/bin/gsettings set org.gnome.desktop.default-applications.terminal exec 'ghostty'
     '';
   };
 
