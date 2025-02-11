@@ -67,7 +67,7 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "/home/tossan/Documents/coding/nix/nvim";
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink "${builtins.getEnv "PWD"}/nvim";
     };
 
   # Home Manager can also manage your environment variables through
