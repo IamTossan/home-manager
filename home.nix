@@ -43,7 +43,6 @@
     # '')
     pkgs.nerd-fonts.hack
     pkgs.tmux
-    pkgs.neovim
 
     pkgs.bottom
     pkgs.lazygit
@@ -94,6 +93,15 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "Albert Oudompheng";
+    userEmail = "tossanmusic@gmail.com";
+  };
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
   programs.alacritty = {
     enable = true;
     settings = {
