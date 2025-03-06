@@ -43,15 +43,24 @@
     # '')
     pkgs.nerd-fonts.hack
     pkgs.tmux
-
-    pkgs.bottom
+    pkgs.docker
+    pkgs.docker-compose
     pkgs.lazygit
-    pkgs.tree
     pkgs.ripgrep
+
+    pkgs.nodejs_22
+    pkgs.pnpm
+    pkgs.rustc
+
+    # utilities
+    pkgs.bottom
+    pkgs.tree
     pkgs.cmatrix
     pkgs.neofetch
     pkgs.tldr
-    
+
+    # PopOS specific
+    pkgs.gnome-tweaks
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
