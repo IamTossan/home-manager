@@ -20,12 +20,13 @@ sudo chown -R $USER:nixbld /nix/var/nix/{profiles,gcroots}/per-user/$USER
 - activate profile
 
 ```bash
-home-manager switch --impure --flake .#tossan
+NIXPKGS_ALLOW_INSECURE=1 NIXPKGS_ALLOW_UNFREE=1 home-manager switch --impure --flake .#tossan
 ```
 
 ## Notes
 
 - update package cache
+
 ```bash
 nix flake update
 ```

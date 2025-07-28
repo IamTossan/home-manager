@@ -9,4 +9,5 @@ return {
   -- import/override with your plugins folder
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.python-ruff" },
 }

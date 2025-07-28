@@ -43,14 +43,26 @@
     # '')
     pkgs.nerd-fonts.hack
     pkgs.tmux
-    pkgs.docker
-    pkgs.docker-compose
     pkgs.lazygit
     pkgs.ripgrep
 
     pkgs.nodejs_22
     pkgs.pnpm
-    pkgs.rustc
+    pkgs.uv
+    pkgs.natscli
+    pkgs.beekeeper-studio
+
+    pkgs.rstudio
+
+    # for k8s
+    pkgs.kubectl
+    pkgs.kubectx
+    pkgs.k9s
+    pkgs.kluctl
+
+    pkgs.keepassxc
+    pkgs.mullvad-browser
+    pkgs.librewolf-bin
 
     # utilities
     pkgs.bottom
@@ -58,9 +70,12 @@
     pkgs.cmatrix
     pkgs.neofetch
     pkgs.tldr
+    pkgs.nvtopPackages.amd
+    pkgs.nmap
 
     # PopOS specific
-    pkgs.gnome-tweaks
+    # pkgs.gnome-tweaks
+    pkgs.libconfig
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -201,6 +216,7 @@
   };
 
   targets.genericLinux.enable = true;
+  xdg.mime.enable = false;
   home.activation = {
     linkDesktopApplications = {
       after = [ "writeBoundary" "createXdgUserDirectories" ];
